@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_locale
+  before_action :set_locale, :navbar_links
 
   private
 
@@ -15,7 +15,16 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
-  end  
+  end
+
+  def navbar_links
+    Header.all.each { |header| @header = header }
+
+    @type = @header.type_ru if params[:locale] != true and params[:locale] != 'en' and params[:locale] != 'tm' and params[:locale] != 'ru'
+    @type = @header.type_ru if params[:locale] == 'ru'
+    @type = @header.type_en if params[:locale] == 'en'
+    @type = @header.type_tm if params[:locale] == 'tm'
+  end
 
   protected
 
