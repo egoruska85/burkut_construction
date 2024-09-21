@@ -1,0 +1,38 @@
+<div class="modal fade" id="lang" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <div class="col-3">
+            <%= link_to url_for(locale: :ru), :class => "navi", :style => "text-decoration: none;" do %>
+              <%= image_tag "/assets/ru.png", :class => "flag" %>
+              RUS
+            <% end %>
+          </div>
+          <div class="col-3">
+            <%= link_to url_for(locale: :en), :class => "navi", :style => "text-decoration: none;" do %>
+              <%= image_tag "/assets/en.png", :class => "flag" %>
+              ENG
+            <% end %>
+          </div>
+          <div class="col-3">
+            <%= link_to url_for(locale: :tm), :class => "navi", :style => "text-decoration: none;" do %>
+              <%= image_tag "/assets/tm.png", :class => "flag" %>
+              TKM
+            <% end %>
+          </div>
+          <div class="col-3">
+            <h3 style="font-family: bankgothic; font-weight: 900; font-size: 15px;">
+              BURKUT
+            </h3>
+          </div>
+        </div>
+
+
+
+
+        <center>
+      </div>
+    </div>
+  </div>
+</div>
