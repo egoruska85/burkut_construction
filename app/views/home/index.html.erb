@@ -51,12 +51,8 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
-
-
-
-<%= button_to destroy_user_session_path, class:'btn btn-dark', style:'width: 300px;', method: :delete do %>
-Выйти
+<% if current_user != nil %>
+<%= button_to destroy_user_session_path, method: :delete, class:'btn btn-danger' do %>
+  Выйти
 <% end %>
-
-<%= Time.now.year %>
+<% end %>
